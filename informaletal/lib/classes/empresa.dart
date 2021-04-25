@@ -2,7 +2,6 @@ import 'Ramo.dart';
 import 'package:cep/cep.dart';
 
 class Empresa {
-
   // Dados da Empresa;
   String _nomeCompleto;
   String _email;
@@ -50,4 +49,6 @@ class Empresa {
   set cep(String cep) {
     _cep = cep;
   }
+
+  Empresa empresa = new Empresa();
 }
