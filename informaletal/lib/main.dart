@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:informaletal/Pages/ValidateCEP.dart';
 import 'dart:io';
 import 'Pages/onboarding.dart';
+import 'Pages/ValidateCEP.dart';
 
 void main() {
   runApp(MyApp());
