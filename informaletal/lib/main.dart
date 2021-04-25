@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:informaletal/Pages/ValidateCEP.dart';
 import 'dart:io';
 import 'Pages/onboarding.dart';
 
@@ -35,10 +36,8 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[Onboarding()],
-        ),
+        //child: Onboarding(),
+        child: ValidateCep(),
       ),
     );
   }

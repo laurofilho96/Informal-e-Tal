@@ -4,14 +4,14 @@ import 'package:cep/cep.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class Onboarding extends StatefulWidget {
+class ValidateCep extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return _OnboardingState();
+    return _ValidateCepState();
   }
 }
 
-class _OnboardingState extends State<Onboarding> {
+class _ValidateCepState extends State<ValidateCep> {
   String filePath = 'assets/webFiles/onBoarding.html';
 
   @override
@@ -30,23 +30,16 @@ class _OnboardingState extends State<Onboarding> {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.only(end: 170.0),
-              child: Text(
-                'Olá, Bem Vindo(a)!',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
-            Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 20),
               child: Image.asset(
-                'assets/images/Doggin01.png',
-                semanticLabel: 'Doggin',
+                'assets/images/Leitura.png',
+                semanticLabel: 'leitura',
               ),
             ),
             Padding(
               padding: EdgeInsets.all(20),
               child: Text(
-                  'Que bom te ver por aqui! Sei que estamos passando por um momento difícil, e por isso, temos como objetivo ajudar trabalhadores domésticos de nossa região a encontrar pessoas que precisem de seus serviços. Tudo na base da confiança.'),
+                  'Atualmente nosso app está funcionando apenas na região de Alagoas e para isso precisamos confirmar seu endereço. Digite seu CEP abaixo para poder continuar.'),
             ),
             Padding(
               padding: EdgeInsets.all(1),
