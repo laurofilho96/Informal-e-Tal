@@ -12,7 +12,7 @@ class ValidateCep extends StatefulWidget {
 }
 
 class _ValidateCepState extends State<ValidateCep> {
-  final _formKey = GlobalKey<FormState>();
+  var _cepResultado = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,14 +44,14 @@ class _ValidateCepState extends State<ValidateCep> {
             Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 50),
                 child: Form(
-                    key: _formKey,
+                    key: _cepResultado,
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         TextFormField(
                           validator: (value) {
                             if (value == null || value.isEmpty) {
-                              return 'Por favor, digite o CEP de sua localização.';
+                              return 'Por favor, insira um CEP válido.';
                             }
                             return null;
                           },
@@ -59,11 +59,14 @@ class _ValidateCepState extends State<ValidateCep> {
                         Padding(
                           padding: const EdgeInsets.all(17.0),
                           child: ElevatedButton(
-                            onPressed: () {
-                              if (_formKey.currentState.validate()) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(
-                                        content: Text('Processando Dados.')));
+                            onPressed: () async {
+                              var resultado = await Cep.consultarCep(
+                                  _cepResultado.toString());
+                              if (_cepResultado.currentState.validate()) {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(SnackBar(
+                                        content: Text('Processando Dados. - '
+                                            '${resultado.uf}')));
                               }
                             },
                             child: Text('Verificar CEP'),

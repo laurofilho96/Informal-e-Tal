@@ -38,7 +38,6 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: Center(
         child: Onboarding(),
-        //child: ValidateCep(),
       ),
     );
   }
@@ -47,7 +46,10 @@ class _MyHomePageState extends State<MyHomePage> {
 class PrimeiraRota extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Onboarding()));
+    return Scaffold(
+        body: Center(
+      child: Onboarding(),
+    ));
   }
 }
 
@@ -58,5 +60,15 @@ class SegundaRota extends StatelessWidget {
         body: Center(
       child: ValidateCep(),
     ));
+  }
+}
+
+class TerceiraRota extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+            // child: SelecionaPerfil(),
+            ));
   }
 }
