@@ -1,8 +1,9 @@
 import 'dart:convert';
-
+import 'package:flutter/foundation.dart';
 import 'package:cep/cep.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:informaletal/main.dart';
 
 class Onboarding extends StatefulWidget {
   @override
@@ -51,7 +52,12 @@ class _OnboardingState extends State<Onboarding> {
             Padding(
               padding: EdgeInsets.all(1),
               child: ElevatedButton(
-                onPressed: null,
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => SegundaRota()),
+                  );
+                },
                 child: Text('Vamos lá'),
                 style: ElevatedButton.styleFrom(),
               ),
