@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:informaletal/Pages/ValidateCEP.dart';
 import 'dart:io';
+//Primeira Tela
 import 'Pages/onboarding.dart';
+//Segunda Tela
 import 'Pages/ValidateCEP.dart';
+//Terceira Tela
+import 'Pages/SelectPerfil.dart';
 
 void main() {
   runApp(MyApp());
@@ -17,6 +22,9 @@ class MyApp extends StatelessWidget {
       title: 'Informal & Tal',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        textTheme: GoogleFonts.montserratTextTheme(
+          Theme.of(context).textTheme,
+        ),
       ),
       home: MyHomePage(title: 'Hackebaum'),
     );
@@ -37,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Onboarding(),
+        child: SelectPerfil(),
       ),
     );
   }
@@ -48,7 +56,7 @@ class PrimeiraRota extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: Onboarding(),
+      child: SelectPerfil(),
     ));
   }
 }
@@ -63,7 +71,7 @@ class SegundaRota extends StatelessWidget {
   }
 }
 
-class TerceiraRota extends StatelessWidget {
+/*class TerceiraRota extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,4 +79,4 @@ class TerceiraRota extends StatelessWidget {
             // child: SelecionaPerfil(),
             ));
   }
-}
+}*/

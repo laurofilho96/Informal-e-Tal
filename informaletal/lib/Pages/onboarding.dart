@@ -13,8 +13,6 @@ class Onboarding extends StatefulWidget {
 }
 
 class _OnboardingState extends State<Onboarding> {
-  String filePath = 'assets/webFiles/onBoarding.html';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
